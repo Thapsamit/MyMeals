@@ -18,18 +18,21 @@ const SafeArea = styled(SafeAreaView)`
   `margin-top: ${StatusBar.currentHeight}px;`}// as statusBar.currentHeight not supported in IOS
 `;
 const SearchContainer = styled.View`
-  padding: 10px;
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 const ListContainer = styled.View`
-  padding: 10px;
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 export const RestaurantsScreen = () => {
   return (
     <SafeArea>
       <SearchContainer>
-        <Searchbar placeholder="Search...." />
+        <Searchbar
+          placeholder="Search...."
+          style={{ backgroundColor: "white" }}
+        />
       </SearchContainer>
       <ListContainer>
         <RestaurantInfoCard />
