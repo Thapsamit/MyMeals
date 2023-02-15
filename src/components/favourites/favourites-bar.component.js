@@ -15,9 +15,8 @@ export const FavouriteBar = ({ favourites, onNavigate }) => {
         {favourites.map((restaurant) => {
           const key = restaurant.name;
           return (
-            <>
-              <Spacer variant="left.medium" />
-              <View key={key}>
+            <View key={key} style={{ marginLeft: 5 }}>
+              <View>
                 <TouchableOpacity
                   onPress={() => {
                     console.log("from favourite bar");
@@ -27,7 +26,7 @@ export const FavouriteBar = ({ favourites, onNavigate }) => {
                   <MapCallout restaurant={restaurant} />
                 </TouchableOpacity>
               </View>
-            </>
+            </View>
           );
         })}
       </ScrollView>
